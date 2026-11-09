@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf3;
+    color: #252018;
+    overflow-x: hidden;
+}
+
+header {
+    background: #211b17;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.logo span {
+    color: #ff843d;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff843d;
+    transition: width 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.nav-links a:hover {
+    color: #ff843d;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cart-btn, .menu-toggle {
+    background: #ff843d;
+    border: none;
+    padding: 11px 17px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-btn:hover {
+    background: #e66f27;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 132, 61, 0.4);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* ==========================================
+   NEWS HEADLINES / MARQUEE ANIMATION
+   ========================================== */
+.news-ticker {
+    background: #ff843d; /* چمکدار اور واضح اورینج کلر */
+    color: #ffffff;      /* واضح سفید ٹیکسٹ */
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: bold;
+    border-top: 2px solid #211b17;
+    border-bottom: 2px solid #211b17;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 22s linear infinite;
+}
+
+.ticker-content span {
+    display: inline-block;
+    padding-right: 50px;
+    color: #ffffff !important; /* ٹیکسٹ کو زبردستی سفید رکھنے کے لیے */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.news-ticker:hover .ticker-content {
+    animation-play-state: paused;
+}
+/* ==========================================
+   HERO SECTION & ANIMATIONS
+   ========================================== */
+.hero {
+    min-height: 550px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: #fff0df;
+}
+
+.hero-content {
+    max-width: 520px;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.tagline {
+    color: #ef7737;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #f0783c;
+}
+
+.hero-content p {
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f0783c;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #d95e25;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(240, 120, 60, 0.4);
+}
+
+.pulse-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(240, 120, 60, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(240, 120, 60, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(240, 120, 60, 0);
+    }
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Image Animation */
+.floating-img {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-18px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   MENU SECTION
+   ========================================== */
+.menu-section {
+    padding: 75px 7%;
+    text-align: center;
+}
+
+.menu-section h2, .about h2, .contact h2 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 35px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.food-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.food-card:hover img {
+    transform: scale(1.08);
+}
+
+.food-card h3 {
+    margin: 15px;
+}
+
+.food-card p {
+    color: #777;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+.food-card h4 {
+    color: #f0783c;
+    margin: 12px;
+    font-size: 18px;
+}
+
+.food-card button {
+    margin-bottom: 18px;
+    background: #211b17;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.food-card button:hover {
+    background: #ff843d;
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   ABOUT & CONTACT SECTIONS
+   ========================================== */
+.about {
+    background: #fff0df;
+    padding: 75px 10%;
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    color: #777;
+    line-height: 2;
+}
+
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-card {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #2b211c;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card img {
+    width: 180px;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    border: 3px solid #ff843d;
+    transition: transform 0.4s ease;
+}
+
+.contact-card:hover img {
+    transform: scale(1.05) rotate(1deg);
+}
+
+.contact-info h3 {
+    color: #ff843d;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    line-height: 1.7;
+    margin: 8px 0;
+    color: #ddd;
+}
+
+footer {
+    background: #211b17;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+/* ==========================================
+   CART SIDEBAR
+   ========================================== */
+.cart-box {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 350px;
+    max-width: 90%;
+    height: 100%;
+    background: white;
+    z-index: 200;
+    padding: 25px;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow-y: auto;
+}
+
+.cart-box.show {
+    right: 0;
+}
+
+.close {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #f0783c;
+}
+
+#cartItems {
+    margin: 25px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+}
+
+/* ==========================================
+   MEDIA QUERIES
+   ========================================== */
+@media(max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-image img {
+        max-width: 300px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-card img {
+        width: 200px;
+        height: 240px;
+    }
+}
+
+@media(max-width: 480px) {
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .navbar {
+        padding: 15px 4%;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food To Go | Homemade Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h2 class="logo">🍔 Food <span>To Go</span></h2>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart (<span id="count">0</span>)
+        </button>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <!-- News Headlines / Marquee Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-content">
+            <span>🔥 Welcome to <strong>FOOD TO GO</strong> — Fresh, Tasty & Homemade Food Made With Love! ❤️</span>
+            <span>🚀 Free Home Delivery on Orders Above Rs. 1000! 🍔</span>
+            <span>✨ Taste The Happiness In Every Single Bite! 🍕</span>
+            <span>🔥 Welcome to <strong>FOOD TO GO</strong> — Fresh, Tasty & Homemade Food Made With Love! ❤️</span>
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="tagline">FRESH • TASTY • HOMEMADE</p>
+        <h1>Delicious Food<br>
+            <span>Made With Love!</span>
+        </h1>
+        <p>
+            Enjoy fresh homemade food with amazing taste.
+            Every bite brings happiness to your day!
+        </p>
+        <a href="#menu" class="btn pulse-btn">Explore Menu →</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800"
+             alt="Delicious Pizza" class="floating-img">
+    </div>
+</section>
+
+<section class="menu-section" id="menu">
+    <h2 class="section-title">Our Delicious Menu</h2>
+    <p class="subtitle">Choose your favourite food!</p>
+
+    <div class="food-grid" id="foodGrid"></div>
+</section>
+
+<section class="about" id="about">
+    <h2>Welcome To Food To Go ❤️</h2>
+    <p>
+        We believe that great food brings people together.
+        Our homemade food is prepared with fresh ingredients,
+        care and love. Taste the happiness in every bite!
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/052/793/073/small/chef-logo-design-vector.jpg" alt="Food To Go Founder">
+
+        <div class="contact-info">
+            <h3>Meet the Founder ❤️</h3>
+            <p>Welcome to Food To Go!</p>
+            <p>Fresh food, delicious taste and homemade love.</p>
+            <p>🍔 Thank you for supporting us!</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>THANK YOU FOR VISTING OUR WEBSITE<P>
+</footer>
+
+<div class="cart-box" id="cartBox">
+    <button class="close" onclick="closeCart()">✖</button>
+    <h2>🛒 Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: Rs. <span id="total">0</span></h3>
+    <button class="btn" onclick="copyOrder()">Copy Order</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
